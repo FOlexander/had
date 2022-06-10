@@ -1,0 +1,309 @@
+{% load static %}
+<html lang="en" class="">
+<head>
+    <!-- <meta name="robots" content="noindex, nofollow"> -->
+    <meta charset="UTF-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta http-equiv="content-language" content="en">
+    <!-- <meta http-equiv="cache-control" content="no-cache"> -->
+    <!-- <meta http-equiv="cache-control" content="max-age=0"> -->
+    <!-- <meta http-equiv="pragma" content="no-cache"> -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimal-ui">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'main/css/style.css' %}">
+    <link rel="icon" href="{% static 'main/images/LogoHADBig1.png' %}">
+
+
+    <title>HAD Survival analysis</title>
+
+</head>
+
+<body>
+    <!-- Google Tag Manager All-PPC -->
+    <!-- End Google Tag Manager All-PPC -->
+
+
+    <!-- main-screen -->
+
+    <section class="main-screen">
+        <div class="nav">
+            <div class="container">
+                <div class="nav-info">
+                    <div class="row align-items-center justify-content-between">
+                        <!-- logo -->
+                        <div class="col-12  col-lg-3 header-logo">
+                            <img src="{% static 'main/images/LogoHADBig1.png' %}" width="108" alt="">
+                        </div>
+                        <!-- logo mob-->
+                        <div class="col-4 col-md-4 header-logo__mob">
+                            <img src="{% static 'main/images/LogoHADBig1.png' %}" width="36" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- content -->
+         <div class="container">
+            <div class="row align-items-center content">
+                <div class="col-lg-6 main-screen__text">
+                    <h1>Tool for Employee Survival Analysis</h1>
+                        <p class="subtitle">Find more insight about you employee from your data.</p>
+                    <a href="{% url 'datadawnload' %}"  class="button cta_hero_button formob">Try For Free</a>
+                </div>
+                <div class="col-lg-6 main-screen__text">
+                    <div class="border-0"><img class="img-fluid" src="{% static 'main/images/Kaplan-Meier.png' %}" alt=""></div>
+                </div>
+                <!-- desktop -->
+                <!-- mob -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- main-screen ends -->
+
+
+    <!-- explanation-screen -->
+
+    <section >
+        <div class="container">
+            <div class="row align-items-center lines">
+                <div class="col-4 col-md-4 col-lg-5">
+                    <hr>
+                </div>
+                <div class="col-4 col-md-4 col-lg-2">
+                    <p class="fw-bold">WHY DO YOU NEED SURVIVAL ANALYSIS?</p>
+                </div>
+                <div class="col-4 col-md-4 col-lg-5">
+                    <hr>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-10">
+                    <p class="text-start ">
+                       There are a lot of challenges that HR faces during day-to-day work, one of the most significant issues is the employee retention period. Surprisingly, many HR managers don’t know how to see the full picture of the employee retention period in the company and have a lot of questions about how to identify key points that drive employee lifetime. Well, in such cases, survival analysis might turn out to be quite an effective instrument. It can be applied to any data that has a start and end time. This tool will help you find out with what probability and how long an employee will work until the occurrence of a specific event (dismissal or promotion). In addition to this, the method will help you to discover the key drivers, that affect the increase or decrease in time to a specific event, help assess the quality of work of the recruiting team, and much more. With this tool, you have much better chances to solve the problems such as a short lifetime of employees. To make it clear, see some examples of how to apply the methods of the survival review below.
+                    </p>
+                    <br>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- explanation-screen ends -->
+
+
+    <!-- examples-screen -->
+
+     <section class="text-pic-screen">
+        <!-- desktop -->
+        <div class="container desktop">
+            <!-- 1 text-pic-->
+            <div class="row align-items-center text-pic-block ">
+                <div class="col-lg-6">
+                    <div class="text-pic-screen__text">
+                        <h3>The median employee retention period in the company:</h3>
+                        <!-- <p><em>Median survival time of employee</em></p> -->
+                        <ul>
+                            <li>This visualization gives you a general understanding of the employee retention period. We see that the median tenure at the company is 16 months.</li>
+                            <li>It means that 50% of the company's workers work longer for this period, and 50% will work less.</li>
+                            <li>Also, we can see that only 27% of employees keep working in the company after the 2 years.</li>
+                        </ul>
+                        <a href="{% url 'datadawnload' %}"  class="button line_button">Receive report for your company</a>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="text-pic-screen__pic">
+                        <img alt="" src="{% static 'main/images/KM03.png' %}">
+                    </div>
+                </div>
+            </div>
+            <!-- 2 pic-text -->
+            <div class="row align-items-center text-pic-block ">
+                <div class="col-lg-6 reverse">
+                    <div class="text-pic-screen__pic">
+                        <img alt="" src="{% static 'main/images/LR.png' %}">
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="text-pic-screen__text">
+                        <h3>The median employee retention periode of 2 groups of workers in the company:</h3>
+                        <!-- <p><em>Same company</em></p> -->
+                        <ul>
+                            <li>In the graph, we see data along the average length of time 2 groups of workers have worked at the company, they are female and male.</li>
+                            <li>The median retention period of female in the company is 12 months, and the median retention period of male in the company is 18 months. As we can see on the graph <strong data-title="In null-hypothesis significance testing, the p-value is the probability of obtaining test results at least as extreme as the result actually observed, under the assumption that the null hypothesis is correct. A very small p-value means that such an extreme observed outcome">"p-value"</strong> less 0.05 for us it means that, female retention period in the company significatively less. </li>
+                            <li>This information is a great point to start research about why company have such situation and what should we change to increase female lifetime in the company.</li>
+                        </ul>
+                        <a href="{% url 'datadawnload' %}"  class="button line_button">Receive report for your company</a>
+                    </div>
+                </div>
+            </div>
+            <!-- 3 text-pic-->
+            <div class="row align-items-center text-pic-block ">
+                <div class="col-lg-6">
+                    <div class="text-pic-screen__text">
+                        <h3>The median employee retention periode of 2 groups of workers work in the company:</h3>
+                        <!-- <p>Same company</p> -->
+                        <ul>
+                            <li>The chart shows the retention period of 2 groups of workers. Group named "Mentor" - had a mentor during the probation period, while the "No Mentor" group did not.</li>
+                            <li>The median retention period of a "Mentor" group in the company is more than 16 months and the median retention period of "No Mentor" group is less than 9 months. As we can see on the graph <strong data-title="In null-hypothesis significance testing, the p-value is the probability of obtaining test results at least as extreme as the result actually observed, under the assumption that the null hypothesis is correct. A very small p-value means that such an extreme observed outcome">"p-value"</strong> less 0.05 for us it means that, "No Mentor" group retention period in the company significatively less.</li>
+                            <li>By reducing the mentoring program, the company wanted to reduce the burden on current employees. After acquiring such effects, it was decided to return to this program. This data helped to understand the importance of the Mentoring program and made necessary changes.</li>
+                        </ul>
+                        <a href="{% url 'datadawnload' %}"  class="button line_button">Receive report for your company</a>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="text-pic-screen__pic">
+                        <img alt="" src="{% static 'main/images/LRM.png' %}">
+                    </div>
+                </div>
+            </div>
+            <!-- 4 pic-text -->
+            <div class="row align-items-center text-pic-block ">
+                <div class="col-lg-6 reverse">
+                    <div class="text-pic-screen__pic">
+                        <img alt="" src="{% static 'main/images/LR4M.png' %}">
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="text-pic-screen__text">
+                        <h3>Visualization of the retention period of employees in 2 departments divided by three groups.</h3>
+                        <p>By taking a quick look at the graph, you can immediately determine in which of the departments and in which group the employee's retention period is the longest, and in which one the shorter. Based on these data, we can offer further insights to understand the reasons for such tenure among the employees of the "A" department of the "Experienced" employees group.</p>
+                        <a href="{% url 'datadawnload' %}"  class="button line_button">Receive report for your company</a>
+                    </div>
+                </div>
+            </div>
+            <!-- 5 text-pic-->
+            <div class="row align-items-center text-pic-block ">
+                <div class="col-lg-6">
+                    <div class="text-pic-screen__text">
+                        <h3>Estimate retention period</h3>
+                        <p>If you start using survival analysis, you will be able to estimate tenure of necomers by applying key facts that affect tenure.</p>
+
+                        <a href="{% url 'datadawnload' %}"  class="button line_button">Estimate retention period of your necomers</a>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="text-pic-screen__pic">
+                        <img alt="" src="{% static 'main/images/PD.png' %}">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- mobile -->
+        <div class="container mobile">
+            <!-- 1 text-pic-->
+            <div class="row align-items-center text-pic-block">
+                <div class="col-12">
+                    <h3>The median employee retention period in the company:</h3>
+                    <div class="text-pic-screen__pic">
+                        <img src="{% static 'main/images/KM03.png' %}" class="ls-is-cached" alt="">
+                    </div>
+                    <!-- <p><em>Median survival time of employee</em></p> -->
+                    <ul>
+                        <li>This visualization gives you a general understanding of the employee retention period. We see that the median tenure at the company is 16 months.</li>
+                        <li>It means that 50% of the company's workers work longer for this period, and 50% will work less.</li>
+                        <li>Also, we can see that only 27% of employees keep working in the company after the 2 years.</li>
+                    </ul>
+                    <a href="{% url 'datadawnload' %}"  class="button line_button">Try for free</a>
+                </div>
+            </div>
+            <!-- 2 text-pic-->
+            <div class="row align-items-center text-pic-block">
+                <div class="col-12">
+                    <h3>The median employee retention periode of 2 groups of workers in the company:</h3>
+                    <div class="text-pic-screen__pic">
+                        <img src="{% static 'main/images/LR.png' %}"class="ls-is-cached" alt="" >
+                    </div>
+                    <!-- <p><em>Same company</em></p> -->
+                    <ul>
+                        <li>In the graph, we see data along the average length of time 2 groups of workers have worked at the company, they are female and male.</li>
+                        <li>The median retention period of female in the company is 12 months, and the median retention period of male in the company is 18 months. As we can see on the graph <strong data-title="In null-hypothesis significance testing, the p-value is the probability of obtaining test results at least as extreme as the result actually observed, under the assumption that the null hypothesis is correct. A very small p-value means that such an extreme observed outcome">"p-value"</strong> less 0.05 for us it means that, female retention period in the company significatively less. </li>
+                        <li>This information is a great point to start research about why company have such situation and what should we change to increase female lifetime in the company.</li>
+                    </ul>
+                    <a href="{% url 'datadawnload' %}"  class="button line_button">Try for free</a>
+                </div>
+            </div>
+            <!-- 3 text-pic-->
+            <div class="row align-items-center text-pic-block">
+                <div class="col-12">
+                    <h3>The median employee retention periode of 2 groups of workers work in the company:</h3>
+                    <div class="text-pic-screen__pic">
+                        <img src="{% static 'main/images/LRM.png' %}" alt="">
+                    </div>
+                    <p>Same company</p>
+                    <ul>
+                        <li>The chart shows the retention period of 2 groups of workers. Group named "Mentor" - had a mentor during the probation period, while the "No Mentor" group did not.</li>
+                        <li>The median retention period of a "Mentor" group in the company is more than 16 months and the median retention period of "No Mentor" group is less than 9 months. As we can see on the graph <strong data-title="In null-hypothesis significance testing, the p-value is the probability of obtaining test results at least as extreme as the result actually observed, under the assumption that the null hypothesis is correct. A very small p-value means that such an extreme observed outcome">"p-value"</strong> less 0.05 for us it means that, "No Mentor" group retention period in the company significatively less.</li>
+                        <li>By reducing the mentoring program, the company wanted to reduce the burden on current employees. After acquiring such effects, it was decided to return to this program. This data helped to understand the importance of the Mentoring program and made necessary changes.</li>
+                    </ul>
+                    <p>Use <strong>Competitors</strong> reports to see who you’re up against<br> online and what their current strengths and<br> weaknesses are.</p>
+                    <a href="{% url 'datadawnload' %}"  class="button line_button">Try for free</a>
+                </div>
+            </div>
+            <!-- 4 text-pic-->
+            <div class="row align-items-center text-pic-block">
+                <div class="col-12">
+                    <h3>Visualization of the retention period of employees in 2 departments divided by three groups.</h3>
+                    <div class="text-pic-screen__pic">
+                        <img src="{% static 'main/images/LR4M.png' %}" alt="">
+                    </div>
+                        <p>By taking a quick look at the graph, you can immediately determine in which of the departments and in which group the employee's retention period is the longest, and in which one the shorter. Based on these data, we can offer further insights to understand the reasons for such tenure among the employees of the "A" department of the "Experienced" employees group.</p>
+                    <a href="{% url 'datadawnload' %}"  class="button line_button">Try for free</a>
+                </div>
+            </div>
+            <!-- 5 text-pic-->
+            <div class="row align-items-center text-pic-block">
+                <div class="col-12">
+                    <h3>Estimate retention period</h3>
+                    <div class="text-pic-screen__pic">
+                        <img src="{% static 'main/images/PD.png' %}" alt="">
+                    </div>
+                    <p>If you start using survival analysis, you will be able to estimate tenure of necomers by applying key facts that affect tenure.</p>
+                    <!-- <a href="{% url 'datadawnload' %}"  class="button line_button">Estimate youe employee</a> -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- examples-pic-screen -->
+
+
+    <!-- cta-screen -->
+
+    <section class="cta-screen ">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-12 col-lg-9">
+                    <h2>Reach outstanding results with the modern analytical tools for multiply HR tasks</h2>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-12">
+                    <a href="{% url 'datadawnload' %}"  class="button cta_footer_button">Try for free</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- cta-screen ends -->
+
+    <!-- footer starts -->
+
+     <div class="footer-line">
+        <div class="container">
+            <a class="terms-privacy " href="#"><span>Terms of Use</span></a>
+            <a class="terms-privacy" href="#"><span>Privacy Policy</span></a>
+            <a class="terms-privacy" href="mailto:h3d@gmail.com"><span>h3d@gmail.com</span></a>
+        </div>
+    </div>
+    <!-- footer ends -->
+
+
+</body>
+
+</html>
