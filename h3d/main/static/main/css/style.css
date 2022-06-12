@@ -2627,15 +2627,13 @@ li>strong:hover::after {
         font-size:15px
     }
 
-    .formob {
-        visibility:hidden
-    }
 }
 
 @media screen and (min-width: 920px) {
     body {
         font-size:16px
     }
+
 }
 
 .mb-0 {
@@ -2842,6 +2840,9 @@ li:last-of-type {
 @media screen and (max-width: 1024.98px) {
     h1 {
         font-size:46px
+    }
+    .formob {
+        visibility:hidden
     }
 }
 

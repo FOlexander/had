@@ -10,9 +10,6 @@ import pandas as pd
 import numpy as np
 import pyexcel
 
-
-
-
 #в этот файл подключаем файл аналитики. Внутри индекса передаем данные
 
 # Create your views here.
@@ -23,7 +20,7 @@ def datadownload(request):
     if request.method == 'POST':
         uploaded_file = request.FILES['document']
         fs = FileSystemStorage()
-        filename = fs.save(uploaded_file.name, uploaded_file)
+        fs.save(uploaded_file.name, uploaded_file)
         # wb = openpyxl.load_workbook(uploaded_file)
         # ws = wb.active
         # df = pd.DataFrame(ws.values)
@@ -38,7 +35,6 @@ def datadownload(request):
         new_header = df.iloc[0]  # grab the first row for the header
         df = df[1:]  # take the data less the header row
         df.columns = new_header  # set the header row as the df header
-
 
         filename = uploaded_file.name
         if filename.split(".")[-1] == "xlsx":
