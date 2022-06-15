@@ -23,6 +23,33 @@
 
 </head>
 <body>
+    <section class="main-screen">
+        <div class="nav">
+            <div class="container">
+                <div class="nav-info">
+                    <div class="row align-items-center justify-content-between">
+                        <!-- logo -->
+                        <div class="col-4 header-logo">
+                            <a href="/" ><img src="{% static 'main/images/LogoHADBig1.png' %}" width="108" alt=""></a>
+                        </div>
+                        <div class="col-4">
+                            <a href="{% url 'index' %}">Home</a>
+                            <a href="{% url 'datadawnload' %}">Back</a>
+
+                        </div>
+                        <!-- logo mob-->
+<!--                        <div class="col-4 col-md-4 header-logo__mob">-->
+<!--                            <a href="#" ><img src="{% static 'main/images/LogoHADBig1.png' %}" width="72" alt=""></a>-->
+<!--                            <a href="{% url 'index' %}">Home</a>-->
+<!--                            <a href="{% url 'datadawnload' %}">Back</a>-->
+
+
+<!--                        </div>-->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <main role="main" class="col-md-12 ml-sm-auto col-lg-12 px-4">
         <div>
@@ -30,21 +57,23 @@
         </div>
         {% block content%}
         <div class="row">
-            <img class="col-9" width="850px" height="560px" src="{{ chart }}" frameborder="0" alt="Красивый график"></img>
+            <img class="col-12 col-xl-8" src="{{ chart }}" frameborder="0" alt="Красивый график"></img>
             {% if Name == "KMF" %}
-                <p class="col-3">KMF Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam feugiat cursus massa, dictum pharetra est suscipit a. Nam interdum elementum sem nec ultrices. Nulla id sem suscipit, accumsan diam eu, placerat dolor. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Vivamus sed congue ipsum. Mauris nunc velit, maximus sed semper eget, ultricies et mi. Ut imperdiet leo nec tellus malesuada ullamcorper. Curabitur id dolor in lacus hendrerit placerat a et nisi. Praesent massa tellus, dictum non mi nec, iaculis suscipit arcu. Vivamus in nisi et urna maximus aliquet sit amet ut nisi. Proin libero nibh, scelerisque maximus cursus sed, faucibus et arcu. Aliquam tortor risus, volutpat nec purus vitae, congue bibendum dolor. Pellentesque et ex ut nisl tincidunt laoreet vitae non quam. Aliquam erat volutpat. Cras finibus nunc ut neque tincidunt congue. Mauris et imperdiet arcu, ac luctus dolor.</p>
+                <p class="va col-12 col-xl-4 ">KMF Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam feugiat cursus massa, dictum pharetra est suscipit a. Nam interdum elementum sem nec ultrices. Nulla id sem suscipit, accumsan diam eu, placerat dolor. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Vivamus sed congue ipsum. Mauris nunc velit, maximus sed semper eget, ultricies et mi. Ut imperdiet leo nec tellus malesuada ullamcorper. Curabitur id dolor in lacus hendrerit placerat a et nisi. Praesent massa tellus, dictum non mi nec, iaculis suscipit arcu. Vivamus in nisi et urna maximus aliquet sit amet ut nisi. Proin libero nibh, scelerisque maximus cursus sed, faucibus et arcu. Aliquam tortor risus, volutpat nec purus vitae, congue bibendum dolor. Pellentesque et ex ut nisl tincidunt laoreet vitae non quam. Aliquam erat volutpat. Cras finibus nunc ut neque tincidunt congue. Mauris et imperdiet arcu, ac luctus dolor.</p>
             {% elif Name == "Long-Rank" %}
-                <p class="col-3">Long-Rank Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam feugiat cursus massa, dictum pharetra est suscipit a. Nam interdum elementum sem nec ultrices. Nulla id sem suscipit, accumsan diam eu, placerat dolor. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Vivamus sed congue ipsum. Mauris nunc velit, maximus sed semper eget, ultricies et mi. Ut imperdiet leo nec tellus malesuada ullamcorper. Curabitur id dolor in lacus hendrerit placerat a et nisi. Praesent massa tellus, dictum non mi nec, iaculis suscipit arcu. Vivamus in nisi et urna maximus aliquet sit amet ut nisi. Proin libero nibh, scelerisque maximus cursus sed, faucibus et arcu. Aliquam tortor risus, volutpat nec purus vitae, congue bibendum dolor. Pellentesque et ex ut nisl tincidunt laoreet vitae non quam. Aliquam erat volutpat. Cras finibus nunc ut neque tincidunt congue. Mauris et imperdiet arcu, ac luctus dolor.</p>
+                <p class="va col-12 col-xl-4 ">Long-Rank Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam feugiat cursus massa, dictum pharetra est suscipit a. Nam interdum elementum sem nec ultrices. Nulla id sem suscipit, accumsan diam eu, placerat dolor. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Vivamus sed congue ipsum. Mauris nunc velit, maximus sed semper eget, ultricies et mi. Ut imperdiet leo nec tellus malesuada ullamcorper. Curabitur id dolor in lacus hendrerit placerat a et nisi. Praesent massa tellus, dictum non mi nec, iaculis suscipit arcu. Vivamus in nisi et urna maximus aliquet sit amet ut nisi. Proin libero nibh, scelerisque maximus cursus sed, faucibus et arcu. Aliquam tortor risus, volutpat nec purus vitae, congue bibendum dolor. Pellentesque et ex ut nisl tincidunt laoreet vitae non quam. Aliquam erat volutpat. Cras finibus nunc ut neque tincidunt congue. Mauris et imperdiet arcu, ac luctus dolor.</p>
             {% endif %}
         </div>
 
         {% endblock%}
     </main>
-     <div class="footer-line">
-        <div class="container">
-            <a class="terms-privacy " href="#"><span>Terms of Use</span></a>
-            <a class="terms-privacy" href="#"><span>Privacy Policy</span></a>
-            <a class="terms-privacy" href="mailto:h3d@gmail.com"><span>h3d@gmail.com</span></a>
+    <div class="row justify-content-center content">
+        <div class="footer-line">
+            <div class="container">
+                <a class="terms-privacy " href="#"><span>Terms of Use</span></a>
+                <a class="terms-privacy" href="#"><span>Privacy Policy</span></a>
+                <a class="terms-privacy" href="mailto:h3d@gmail.com"><span>h3d@gmail.com</span></a>
+            </div>
         </div>
     </div>
 
