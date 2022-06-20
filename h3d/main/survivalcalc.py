@@ -8,6 +8,7 @@ from datetime import datetime, timedelta
 import matplotlib.pyplot as plt
 import plotly.express as px
 from .models import Plot
+import math
 
 x = datetime(2015, 12, 31)
 plt.switch_backend('agg')#https://stackoverflow.com/questions/52839758/matplotlib-and-runtimeerror-main-thread-is-not-in-main-loop
@@ -47,7 +48,7 @@ def KaplanMeier(df,filename):
 
     kmf = KaplanMeierFitter()
 
-    kmf.fit(durations=df['WorkTimeM'], event_observed=df['Event'])
+    kmf.fit(durations=df['WorkTimeM'], event_observed=df['Event'], label='Median Survival Time')
 
     a = [kmf.median_survival_time_]
 
@@ -56,14 +57,16 @@ def KaplanMeier(df,filename):
     chartname = f"media/{filename}"
 
     plt.grid(alpha=0.3)  # сетка и ее прозрачность
-
     plt.xlabel('Months')
     plt.ylabel('Survival')
-    plt.title('KMF')
+    plt.title('Employee Median Survival Time')
+    plt.legend()
     plt.ylim(0, 1)
     plt.xlim(0, max(df['WorkTimeM']))
     plt.axhline(y=0.5, xmin=0, xmax=a[0] / max(df['WorkTimeM']), color="#E7B800", ls="dotted", lw=1)
     plt.axvline(x=a, ymin=0, ymax=0.5, color="#E7B800", ls="dotted", lw=1)
+    y = [0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1]
+    plt.yticks(y)  # размер градации шкалы
     plt.savefig(chartname, dpi=150)
     plt.close()
     # plotadress = '/'.join(chartname.split('\\')[-2:])
@@ -72,13 +75,16 @@ def KaplanMeier(df,filename):
     print('plotadress', plotadress,'\\n', 'chartname',chartname)
     p = Plot(title='Beatles Blog',plot = plotadress)
     p.save()
+    Hazard3m = (1 - kmf.survival_function_at_times(3.0).iloc[0])*100
+    Hazard6m = (1 - kmf.survival_function_at_times(6.0).iloc[0])*100
+    Hazard12m = (1 - kmf.survival_function_at_times(12.0).iloc[0])*100
 
     data = {
         "Name": "KMF",
-        "Hazard3m": 1 - kmf.survival_function_at_times(3.0).iloc[0],
-        "Hazard6m": 1 - kmf.survival_function_at_times(6.0).iloc[0],
-        "Hazard12m": 1 - kmf.survival_function_at_times(12.0).iloc[0],
-        "AvarageSurvival": a[0],
+        "Hazard3m": "{:.1f}".format(Hazard3m),
+        "Hazard6m": "{:.1f}".format(Hazard6m),
+        "Hazard12m": "{:.1f}".format(Hazard12m),
+        "AvarageSurvival": math.ceil(a[0]),
         "chart":plotadress
         # "75Survival": kmf.percentile(p="0.25"),
         # "25Survival": kmf.percentile(p="0.75")
@@ -103,12 +109,14 @@ def LogRank(df,filename):
 
     kmf_b = KaplanMeierFitter()
     kmf_nb = KaplanMeierFitter()
-    print('KMstart')
-    b = df.query('Factor == 1')
-    nb = df.query('Factor == 0')
+    # print('KMstart')
+    factors = list(set(df['Factor'].to_numpy()))
+
+    b = df[df['Factor'] == factors[1]]
+    nb = df[df['Factor'] == factors[0]]
     print(b)
-    kmf_b.fit(durations=b['WorkTimeM'], event_observed=b['Event'], label='Factor')
-    kmf_nb.fit(durations=nb['WorkTimeM'], event_observed=nb['Event'], label='No Factor')
+    kmf_b.fit(durations=b['WorkTimeM'], event_observed=b['Event'], label=f'{factors[1]} Median Survival Time')
+    kmf_nb.fit(durations=nb['WorkTimeM'], event_observed=nb['Event'], label=f'{factors[0]} Median Survival Time')
     print('knBNB')
 
     ba = [kmf_b.median_survival_time_]
@@ -123,7 +131,7 @@ def LogRank(df,filename):
     plt.grid(alpha=0.3)  # сетка и ее прозрачность
     plt.xlabel('Months')
     plt.ylabel('Survival')
-    plt.title('KMF')
+    plt.title('Employee Median Survival Time')
     plt.ylim(0, 1)
     plt.xlim(0, max(df['WorkTimeM']))
     plt.axhline(y=0.5, xmin=0, xmax=ba[0] / max(df['WorkTimeM']), color="red", ls="--",
