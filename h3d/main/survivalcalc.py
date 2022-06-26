@@ -122,6 +122,8 @@ def LogRank(df,filename):
     ba = [kmf_b.median_survival_time_]
     nba = [kmf_nb.median_survival_time_]
 
+    print(ba, nba)
+
     # print(kmf_b.hazard_)
     px = 1 / plt.rcParams['figure.dpi']
     kmf_b.plot(color="#0057b8", figsize=(854*px, 480*px),ci_show=False)  # цвет линии и размер графика
@@ -161,24 +163,34 @@ def LogRank(df,filename):
 
     results = logrank_test(T, T1, event_observed_A=E, event_observed_B=E1)
     if results.p_value < 0.05:
-        pvaluetext = 'we could not accept 0 Hypotesis'
+        pvaluetext = 'p.value is less 0.05 that mean there are significant statistical difference between tenure of this groups'
     else:
-        pvaluetext = 'we could accept 0 Hypotesis there is no difference between this two group'
+        pvaluetext = 'p.value is larger 0.05 that mean that there are significant statistical difference between tenure of this groups'
+
+    Hazardb3m = (1 - kmf_b.survival_function_at_times(3.0).iloc[0])*100
+    Hazardb6m = (1 - kmf_b.survival_function_at_times(6.0).iloc[0])*100
+    Hazardb12m = (1 - kmf_b.survival_function_at_times(12.0).iloc[0])*100
+
+    Hazardnb3m = (1 - kmf_nb.survival_function_at_times(3.0).iloc[0])*100
+    Hazardnb6m = (1 - kmf_nb.survival_function_at_times(6.0).iloc[0])*100
+    Hazardnb12m = (1 - kmf_nb.survival_function_at_times(12.0).iloc[0])*100
 
     data = {
         'Name': "Long-Rank",
         "Pvalue": results.p_value,
         "pvaluetext": pvaluetext,
-        "Hazardb3m": 1 - kmf_b.survival_function_at_times(3.0).iloc[0],
-        "Hazardb6m": 1 - kmf_b.survival_function_at_times(6.0).iloc[0],
-        "Hazardb12m": 1 - kmf_b.survival_function_at_times(12.0).iloc[0],
-        "AvarageSurvivalb": kmf_b.median_survival_time_,
+        "GroupbName": factors[1],
+        "Hazardb3m": "{:.1f}".format(Hazardb3m),
+        "Hazardb6m": "{:.1f}".format(Hazardb6m),
+        "Hazardb12m": "{:.1f}".format(Hazardb12m),
+        "AvarageSurvivalb": "{:.0f}".format(ba[0]),
         # "75Survivalb": kmf_b.percentile(p="0.25"),
         # "25Survivalb": kmf_b.percentile(p="0.75"),
-        "Hazardnb3m": 1 - kmf_nb.survival_function_at_times(3.0).iloc[0],
-        "Hazardnb6m": 1 - kmf_nb.survival_function_at_times(6.0).iloc[0],
-        "Hazardnb6m": 1 - kmf_nb.survival_function_at_times(12.0).iloc[0],
-        "AvarageSurvivalnb": kmf_nb.median_survival_time_,
+        "GroupbnName": factors[0],
+        "Hazardnb3m": "{:.1f}".format(Hazardnb3m),
+        "Hazardnb6m": "{:.1f}".format(Hazardnb6m),
+        "Hazardnb12m": "{:.1f}".format(Hazardnb12m),
+        "AvarageSurvivalnb":  "{:.0f}".format(nba[0]),
         # "75Survivalnb": kmf_nb.percentile(p="0.25"),
         # "25Survivalnb": kmf_nb.percentile(p="0.75")
         "chart": plotadress

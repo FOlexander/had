@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7ee2cdf1-a4b6-4c07-99fb-e5b008e207ea" name="Changes" comment="15.06 style udates">
+    <list default="true" id="7ee2cdf1-a4b6-4c07-99fb-e5b008e207ea" name="Changes" comment="20.06 style udates">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/h3d/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/h3d/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/h3d/main/static/main/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/h3d/main/static/main/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/h3d/h3d/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/h3d/h3d/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/h3d/h3d/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/h3d/h3d/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/h3d/main/survivalcalc.py" beforeDir="false" afterPath="$PROJECT_DIR$/h3d/main/survivalcalc.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/h3d/main/templates/main/chart.html" beforeDir="false" afterPath="$PROJECT_DIR$/h3d/main/templates/main/chart.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/h3d/main/templates/main/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/h3d/main/templates/main/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -144,7 +144,14 @@
       <option name="project" value="LOCAL" />
       <updated>1655301071993</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="20.06 style udates">
+      <created>1655746224728</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1655746224728</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -163,6 +170,7 @@
     <MESSAGE value="12.06 update" />
     <MESSAGE value="12.06 form validation update" />
     <MESSAGE value="15.06 style udates" />
-    <option name="LAST_COMMIT_MESSAGE" value="15.06 style udates" />
+    <MESSAGE value="20.06 style udates" />
+    <option name="LAST_COMMIT_MESSAGE" value="20.06 style udates" />
   </component>
 </project>

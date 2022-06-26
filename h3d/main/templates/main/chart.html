@@ -67,7 +67,21 @@
                     After <strong>12</strong> months of working, company leaves <strong>{{ Hazard12m }}%</strong> of employee.<br>
                     <strong>Median</strong> tenure at the company is <strong>{{ AvarageSurvival }}</strong> months.</p>
             {% elif Name == "Long-Rank" %}
-                <p class="va col-12 col-xl-4 graphdisctiption">Long-Rank Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam feugiat cursus massa, dictum pharetra est suscipit a. Nam interdum elementum sem nec ultrices. Nulla id sem suscipit, accumsan diam eu, placerat dolor. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Vivamus sed congue ipsum. Mauris nunc velit, maximus sed semper eget, ultricies et mi. Ut imperdiet leo nec tellus malesuada ullamcorper. Curabitur id dolor in lacus hendrerit placerat a et nisi. Praesent massa tellus, dictum non mi nec, iaculis suscipit arcu. Vivamus in nisi et urna maximus aliquet sit amet ut nisi. Proin libero nibh, scelerisque maximus cursus sed, faucibus et arcu. Aliquam tortor risus, volutpat nec purus vitae, congue bibendum dolor. Pellentesque et ex ut nisl tincidunt laoreet vitae non quam. Aliquam erat volutpat. Cras finibus nunc ut neque tincidunt congue. Mauris et imperdiet arcu, ac luctus dolor.</p>
+                <p class="va col-12 col-xl-4 graphdisctiption">This chart gives you an understanding of the median retention period of two groups of employee.
+                    The horizontal axis represents time in months, and the vertical axis shows the probability of surviving or the proportion of people surviving.
+                    Time zero is a first working day of employee the survival probability is 1.0 (or 100% of the employees are working in the company). As we can see from your data:<br>
+                    General overview for Group <strong>{{GroupbName}}</strong>:<br>
+                    After <strong>3</strong> months of working, company leaves <strong>{{ Hazardb3m }}%</strong> of employee<br>
+                    After <strong>6</strong> months of working, company leaves <strong>{{ Hazardb6m }}%</strong> of employee.<br>
+                    After <strong>12</strong> months of working, company leaves <strong>{{ Hazardb12m }}%</strong> of employee.<br>
+                    <strong>Median</strong> tenure at the company are <strong>{{ AvarageSurvivalb }}</strong> months.
+                    General overview for Group <strong>{{GroupbnName}}</strong>:<br>
+                    After <strong>3</strong> months of working, company leaves <strong>{{ Hazardnb3m }}%</strong> of employee<br>
+                    After <strong>6</strong> months of working, company leaves <strong>{{ Hazardnb6m }}%</strong> of employee.<br>
+                    After <strong>12</strong> months of working, company leaves <strong>{{ Hazardnb12m }}%</strong> of employee.<br>
+                    <strong>Median</strong> tenure at the company are <strong>{{ AvarageSurvivalnb }}</strong> months.<br>
+                    {{ pvaluetext }}
+                </p>
             {% endif %}
         </div>
 
