@@ -21,7 +21,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-2j@_^1^c3vyhmctstbb8l)bn9b#u0ef3e77s+emur=9w&cg+j4'
+SECRET_KEY = 'django-insecure-2j@_^1^7777s+emur=9w&cg+j4'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -78,12 +78,12 @@ WSGI_APPLICATION = 'h3d.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
-}
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+# }
 
 
 # Password validation
@@ -136,3 +136,9 @@ FILE_UPLOAD_HANDLERS = ("django_excel.ExcelMemoryFileUploadHandler",
 INTERNAL_IPS = [
     "127.0.0.1",
 ]
+
+
+try:
+    from .local_settings import *
+except ImportError:
+    from .prod_settings import *
