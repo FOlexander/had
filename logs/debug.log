@@ -1,0 +1,644 @@
+[2022-07-03 13:44:00 -0400] [47799] [INFO] Starting gunicorn 20.1.0
+[2022-07-03 13:44:00 -0400] [47799] [INFO] Listening at: http://127.0.0.1:8000 (47799)
+[2022-07-03 13:44:00 -0400] [47799] [INFO] Using worker: sync
+[2022-07-03 13:44:00 -0400] [47802] [INFO] Booting worker with pid: 47802
+[2022-07-03 13:44:00 -0400] [47802] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/home/john/venv/lib/python3.7/site-packages/gunicorn/arbiter.py", line 589, in spawn_worker
+    worker.init_process()
+  File "/home/john/venv/lib/python3.7/site-packages/gunicorn/workers/base.py", line 134, in init_process
+    self.load_wsgi()
+  File "/home/john/venv/lib/python3.7/site-packages/gunicorn/workers/base.py", line 146, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/home/john/venv/lib/python3.7/site-packages/gunicorn/app/base.py", line 67, in wsgi
+    self.callable = self.load()
+  File "/home/john/venv/lib/python3.7/site-packages/gunicorn/app/wsgiapp.py", line 58, in load
+    return self.load_wsgiapp()
+  File "/home/john/venv/lib/python3.7/site-packages/gunicorn/app/wsgiapp.py", line 48, in load_wsgiapp
+    return util.import_app(self.app_uri)
+  File "/home/john/venv/lib/python3.7/site-packages/gunicorn/util.py", line 359, in import_app
+    mod = importlib.import_module(module)
+  File "/usr/lib/python3.7/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1006, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 983, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 965, in _find_and_load_unlocked
+ModuleNotFoundError: No module named 'h3d.wsgi'
+[2022-07-03 13:44:00 -0400] [47802] [INFO] Worker exiting (pid: 47802)
+[2022-07-03 13:44:00 -0400] [47803] [INFO] Booting worker with pid: 47803
+[2022-07-03 13:44:00 -0400] [47803] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/home/john/venv/lib/python3.7/site-packages/gunicorn/arbiter.py", line 589, in spawn_worker
+    worker.init_process()
+  File "/home/john/venv/lib/python3.7/site-packages/gunicorn/workers/base.py", line 134, in init_process
+    self.load_wsgi()
+  File "/home/john/venv/lib/python3.7/site-packages/gunicorn/workers/base.py", line 146, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/home/john/venv/lib/python3.7/site-packages/gunicorn/app/base.py", line 67, in wsgi
+    self.callable = self.load()
+  File "/home/john/venv/lib/python3.7/site-packages/gunicorn/app/wsgiapp.py", line 58, in load
+    return self.load_wsgiapp()
+  File "/home/john/venv/lib/python3.7/site-packages/gunicorn/app/wsgiapp.py", line 48, in load_wsgiapp
+    return util.import_app(self.app_uri)
+  File "/home/john/venv/lib/python3.7/site-packages/gunicorn/util.py", line 359, in import_app
+    mod = importlib.import_module(module)
+  File "/usr/lib/python3.7/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1006, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 983, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 965, in _find_and_load_unlocked
+ModuleNotFoundError: No module named 'h3d.wsgi'
+[2022-07-03 13:44:00 -0400] [47803] [INFO] Worker exiting (pid: 47803)
+Traceback (most recent call last):
+  File "/home/john/venv/lib/python3.7/site-packages/gunicorn/arbiter.py", line 202, in run
+    self.manage_workers()
+  File "/home/john/venv/lib/python3.7/site-packages/gunicorn/arbiter.py", line 551, in manage_workers
+    self.spawn_workers()
+  File "/home/john/venv/lib/python3.7/site-packages/gunicorn/arbiter.py", line 623, in spawn_workers
+    time.sleep(0.1 * random.random())
+  File "/home/john/venv/lib/python3.7/site-packages/gunicorn/arbiter.py", line 242, in handle_chld
+    self.reap_workers()
+  File "/home/john/venv/lib/python3.7/site-packages/gunicorn/arbiter.py", line 525, in reap_workers
+    raise HaltServer(reason, self.WORKER_BOOT_ERROR)
+gunicorn.errors.HaltServer: <HaltServer 'Worker failed to boot.' 3>
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/john/venv/bin/gunicorn", line 8, in <module>
+    sys.exit(run())
+  File "/home/john/venv/lib/python3.7/site-packages/gunicorn/app/wsgiapp.py", line 67, in run
+    WSGIApplication("%(prog)s [OPTIONS] [APP_MODULE]").run()
+  File "/home/john/venv/lib/python3.7/site-packages/gunicorn/app/base.py", line 231, in run
+    super().run()
+  File "/home/john/venv/lib/python3.7/site-packages/gunicorn/app/base.py", line 72, in run
+    Arbiter(self).run()
+  File "/home/john/venv/lib/python3.7/site-packages/gunicorn/arbiter.py", line 229, in run
+    self.halt(reason=inst.reason, exit_status=inst.exit_status)
+  File "/home/john/venv/lib/python3.7/site-packages/gunicorn/arbiter.py", line 342, in halt
+    self.stop()
+  File "/home/john/venv/lib/python3.7/site-packages/gunicorn/arbiter.py", line 393, in stop
+    time.sleep(0.1)
+  File "/home/john/venv/lib/python3.7/site-packages/gunicorn/arbiter.py", line 242, in handle_chld
+    self.reap_workers()
+  File "/home/john/venv/lib/python3.7/site-packages/gunicorn/arbiter.py", line 525, in reap_workers
+    raise HaltServer(reason, self.WORKER_BOOT_ERROR)
+gunicorn.errors.HaltServer: <HaltServer 'Worker failed to boot.' 3>
+[2022-07-03 13:44:01 -0400] [47804] [INFO] Starting gunicorn 20.1.0
+[2022-07-03 13:44:01 -0400] [47804] [INFO] Listening at: http://127.0.0.1:8000 (47804)
+[2022-07-03 13:44:01 -0400] [47804] [INFO] Using worker: sync
+[2022-07-03 13:44:01 -0400] [47807] [INFO] Booting worker with pid: 47807
+[2022-07-03 13:44:01 -0400] [47807] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/home/john/venv/lib/python3.7/site-packages/gunicorn/arbiter.py", line 589, in spawn_worker
+    worker.init_process()
+  File "/home/john/venv/lib/python3.7/site-packages/gunicorn/workers/base.py", line 134, in init_process
+    self.load_wsgi()
+  File "/home/john/venv/lib/python3.7/site-packages/gunicorn/workers/base.py", line 146, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/home/john/venv/lib/python3.7/site-packages/gunicorn/app/base.py", line 67, in wsgi
+    self.callable = self.load()
+  File "/home/john/venv/lib/python3.7/site-packages/gunicorn/app/wsgiapp.py", line 58, in load
+    return self.load_wsgiapp()
+  File "/home/john/venv/lib/python3.7/site-packages/gunicorn/app/wsgiapp.py", line 48, in load_wsgiapp
+    return util.import_app(self.app_uri)
+  File "/home/john/venv/lib/python3.7/site-packages/gunicorn/util.py", line 359, in import_app
+    mod = importlib.import_module(module)
+  File "/usr/lib/python3.7/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1006, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 983, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 965, in _find_and_load_unlocked
+ModuleNotFoundError: No module named 'h3d.wsgi'
+[2022-07-03 13:44:01 -0400] [47807] [INFO] Worker exiting (pid: 47807)
+[2022-07-03 13:44:01 -0400] [47808] [INFO] Booting worker with pid: 47808
+[2022-07-03 13:44:01 -0400] [47808] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/home/john/venv/lib/python3.7/site-packages/gunicorn/arbiter.py", line 589, in spawn_worker
+    worker.init_process()
+  File "/home/john/venv/lib/python3.7/site-packages/gunicorn/workers/base.py", line 134, in init_process
+    self.load_wsgi()
+  File "/home/john/venv/lib/python3.7/site-packages/gunicorn/workers/base.py", line 146, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/home/john/venv/lib/python3.7/site-packages/gunicorn/app/base.py", line 67, in wsgi
+    self.callable = self.load()
+  File "/home/john/venv/lib/python3.7/site-packages/gunicorn/app/wsgiapp.py", line 58, in load
+    return self.load_wsgiapp()
+  File "/home/john/venv/lib/python3.7/site-packages/gunicorn/app/wsgiapp.py", line 48, in load_wsgiapp
+    return util.import_app(self.app_uri)
+  File "/home/john/venv/lib/python3.7/site-packages/gunicorn/util.py", line 359, in import_app
+    mod = importlib.import_module(module)
+  File "/usr/lib/python3.7/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1006, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 983, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 965, in _find_and_load_unlocked
+ModuleNotFoundError: No module named 'h3d.wsgi'
+[2022-07-03 13:44:01 -0400] [47808] [INFO] Worker exiting (pid: 47808)
+[2022-07-03 13:44:01 -0400] [47809] [INFO] Booting worker with pid: 47809
+[2022-07-03 13:44:01 -0400] [47809] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/home/john/venv/lib/python3.7/site-packages/gunicorn/arbiter.py", line 589, in spawn_worker
+    worker.init_process()
+  File "/home/john/venv/lib/python3.7/site-packages/gunicorn/workers/base.py", line 134, in init_process
+    self.load_wsgi()
+  File "/home/john/venv/lib/python3.7/site-packages/gunicorn/workers/base.py", line 146, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/home/john/venv/lib/python3.7/site-packages/gunicorn/app/base.py", line 67, in wsgi
+    self.callable = self.load()
+  File "/home/john/venv/lib/python3.7/site-packages/gunicorn/app/wsgiapp.py", line 58, in load
+    return self.load_wsgiapp()
+  File "/home/john/venv/lib/python3.7/site-packages/gunicorn/app/wsgiapp.py", line 48, in load_wsgiapp
+    return util.import_app(self.app_uri)
+  File "/home/john/venv/lib/python3.7/site-packages/gunicorn/util.py", line 359, in import_app
+    mod = importlib.import_module(module)
+  File "/usr/lib/python3.7/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1006, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 983, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 965, in _find_and_load_unlocked
+ModuleNotFoundError: No module named 'h3d.wsgi'
+[2022-07-03 13:44:01 -0400] [47809] [INFO] Worker exiting (pid: 47809)
+[2022-07-03 13:44:01 -0400] [47804] [WARNING] Worker with pid 47809 was terminated due to signal 15
+[2022-07-03 13:44:01 -0400] [47804] [WARNING] Worker with pid 47808 was terminated due to signal 15
+[2022-07-03 13:44:01 -0400] [47804] [INFO] Shutting down: Master
+[2022-07-03 13:44:01 -0400] [47804] [INFO] Reason: Worker failed to boot.
+[2022-07-03 13:44:03 -0400] [47810] [INFO] Starting gunicorn 20.1.0
+[2022-07-03 13:44:03 -0400] [47810] [INFO] Listening at: http://127.0.0.1:8000 (47810)
+[2022-07-03 13:44:03 -0400] [47810] [INFO] Using worker: sync
+[2022-07-03 13:44:03 -0400] [47813] [INFO] Booting worker with pid: 47813
+[2022-07-03 13:44:03 -0400] [47813] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/home/john/venv/lib/python3.7/site-packages/gunicorn/arbiter.py", line 589, in spawn_worker
+    worker.init_process()
+  File "/home/john/venv/lib/python3.7/site-packages/gunicorn/workers/base.py", line 134, in init_process
+    self.load_wsgi()
+  File "/home/john/venv/lib/python3.7/site-packages/gunicorn/workers/base.py", line 146, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/home/john/venv/lib/python3.7/site-packages/gunicorn/app/base.py", line 67, in wsgi
+    self.callable = self.load()
+  File "/home/john/venv/lib/python3.7/site-packages/gunicorn/app/wsgiapp.py", line 58, in load
+    return self.load_wsgiapp()
+  File "/home/john/venv/lib/python3.7/site-packages/gunicorn/app/wsgiapp.py", line 48, in load_wsgiapp
+    return util.import_app(self.app_uri)
+  File "/home/john/venv/lib/python3.7/site-packages/gunicorn/util.py", line 359, in import_app
+    mod = importlib.import_module(module)
+  File "/usr/lib/python3.7/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1006, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 983, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 965, in _find_and_load_unlocked
+ModuleNotFoundError: No module named 'h3d.wsgi'
+[2022-07-03 13:44:03 -0400] [47813] [INFO] Worker exiting (pid: 47813)
+[2022-07-03 13:44:03 -0400] [47810] [INFO] Shutting down: Master
+[2022-07-03 13:44:03 -0400] [47810] [INFO] Reason: Worker failed to boot.
+[2022-07-03 13:44:06 -0400] [47814] [INFO] Starting gunicorn 20.1.0
+[2022-07-03 13:44:06 -0400] [47814] [INFO] Listening at: http://127.0.0.1:8000 (47814)
+[2022-07-03 13:44:06 -0400] [47814] [INFO] Using worker: sync
+[2022-07-03 13:44:06 -0400] [47817] [INFO] Booting worker with pid: 47817
+[2022-07-03 13:44:06 -0400] [47817] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/home/john/venv/lib/python3.7/site-packages/gunicorn/arbiter.py", line 589, in spawn_worker
+    worker.init_process()
+  File "/home/john/venv/lib/python3.7/site-packages/gunicorn/workers/base.py", line 134, in init_process
+    self.load_wsgi()
+  File "/home/john/venv/lib/python3.7/site-packages/gunicorn/workers/base.py", line 146, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/home/john/venv/lib/python3.7/site-packages/gunicorn/app/base.py", line 67, in wsgi
+    self.callable = self.load()
+  File "/home/john/venv/lib/python3.7/site-packages/gunicorn/app/wsgiapp.py", line 58, in load
+    return self.load_wsgiapp()
+  File "/home/john/venv/lib/python3.7/site-packages/gunicorn/app/wsgiapp.py", line 48, in load_wsgiapp
+    return util.import_app(self.app_uri)
+  File "/home/john/venv/lib/python3.7/site-packages/gunicorn/util.py", line 359, in import_app
+    mod = importlib.import_module(module)
+  File "/usr/lib/python3.7/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1006, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 983, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 965, in _find_and_load_unlocked
+ModuleNotFoundError: No module named 'h3d.wsgi'
+[2022-07-03 13:44:06 -0400] [47817] [INFO] Worker exiting (pid: 47817)
+[2022-07-03 13:44:06 -0400] [47818] [INFO] Booting worker with pid: 47818
+[2022-07-03 13:44:06 -0400] [47818] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/home/john/venv/lib/python3.7/site-packages/gunicorn/arbiter.py", line 589, in spawn_worker
+    worker.init_process()
+  File "/home/john/venv/lib/python3.7/site-packages/gunicorn/workers/base.py", line 134, in init_process
+    self.load_wsgi()
+  File "/home/john/venv/lib/python3.7/site-packages/gunicorn/workers/base.py", line 146, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/home/john/venv/lib/python3.7/site-packages/gunicorn/app/base.py", line 67, in wsgi
+    self.callable = self.load()
+  File "/home/john/venv/lib/python3.7/site-packages/gunicorn/app/wsgiapp.py", line 58, in load
+    return self.load_wsgiapp()
+  File "/home/john/venv/lib/python3.7/site-packages/gunicorn/app/wsgiapp.py", line 48, in load_wsgiapp
+    return util.import_app(self.app_uri)
+  File "/home/john/venv/lib/python3.7/site-packages/gunicorn/util.py", line 359, in import_app
+    mod = importlib.import_module(module)
+  File "/usr/lib/python3.7/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1006, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 983, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 965, in _find_and_load_unlocked
+ModuleNotFoundError: No module named 'h3d.wsgi'
+[2022-07-03 13:44:06 -0400] [47818] [INFO] Worker exiting (pid: 47818)
+[2022-07-03 13:44:06 -0400] [47814] [WARNING] Worker with pid 47818 was terminated due to signal 15
+[2022-07-03 13:44:07 -0400] [47814] [INFO] Shutting down: Master
+[2022-07-03 13:44:07 -0400] [47814] [INFO] Reason: Worker failed to boot.
+[2022-07-03 13:44:44 -0400] [47827] [INFO] Starting gunicorn 20.1.0
+[2022-07-03 13:44:44 -0400] [47827] [INFO] Listening at: http://127.0.0.1:8000 (47827)
+[2022-07-03 13:44:44 -0400] [47827] [INFO] Using worker: sync
+[2022-07-03 13:44:44 -0400] [47830] [INFO] Booting worker with pid: 47830
+[2022-07-03 13:44:44 -0400] [47830] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/home/john/venv/lib/python3.7/site-packages/gunicorn/arbiter.py", line 589, in spawn_worker
+    worker.init_process()
+  File "/home/john/venv/lib/python3.7/site-packages/gunicorn/workers/base.py", line 134, in init_process
+    self.load_wsgi()
+  File "/home/john/venv/lib/python3.7/site-packages/gunicorn/workers/base.py", line 146, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/home/john/venv/lib/python3.7/site-packages/gunicorn/app/base.py", line 67, in wsgi
+    self.callable = self.load()
+  File "/home/john/venv/lib/python3.7/site-packages/gunicorn/app/wsgiapp.py", line 58, in load
+    return self.load_wsgiapp()
+  File "/home/john/venv/lib/python3.7/site-packages/gunicorn/app/wsgiapp.py", line 48, in load_wsgiapp
+    return util.import_app(self.app_uri)
+  File "/home/john/venv/lib/python3.7/site-packages/gunicorn/util.py", line 359, in import_app
+    mod = importlib.import_module(module)
+  File "/usr/lib/python3.7/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1006, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 983, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 965, in _find_and_load_unlocked
+ModuleNotFoundError: No module named 'h3d.wsgi'
+[2022-07-03 13:44:44 -0400] [47830] [INFO] Worker exiting (pid: 47830)
+[2022-07-03 13:44:44 -0400] [47827] [INFO] Shutting down: Master
+[2022-07-03 13:44:44 -0400] [47827] [INFO] Reason: Worker failed to boot.
+[2022-07-03 13:44:46 -0400] [47831] [INFO] Starting gunicorn 20.1.0
+[2022-07-03 13:44:46 -0400] [47831] [INFO] Listening at: http://127.0.0.1:8000 (47831)
+[2022-07-03 13:44:46 -0400] [47831] [INFO] Using worker: sync
+[2022-07-03 13:44:46 -0400] [47834] [INFO] Booting worker with pid: 47834
+[2022-07-03 13:44:46 -0400] [47834] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/home/john/venv/lib/python3.7/site-packages/gunicorn/arbiter.py", line 589, in spawn_worker
+    worker.init_process()
+  File "/home/john/venv/lib/python3.7/site-packages/gunicorn/workers/base.py", line 134, in init_process
+    self.load_wsgi()
+  File "/home/john/venv/lib/python3.7/site-packages/gunicorn/workers/base.py", line 146, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/home/john/venv/lib/python3.7/site-packages/gunicorn/app/base.py", line 67, in wsgi
+    self.callable = self.load()
+  File "/home/john/venv/lib/python3.7/site-packages/gunicorn/app/wsgiapp.py", line 58, in load
+    return self.load_wsgiapp()
+  File "/home/john/venv/lib/python3.7/site-packages/gunicorn/app/wsgiapp.py", line 48, in load_wsgiapp
+    return util.import_app(self.app_uri)
+  File "/home/john/venv/lib/python3.7/site-packages/gunicorn/util.py", line 359, in import_app
+    mod = importlib.import_module(module)
+  File "/usr/lib/python3.7/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1006, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 983, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 965, in _find_and_load_unlocked
+ModuleNotFoundError: No module named 'h3d.wsgi'
+[2022-07-03 13:44:46 -0400] [47834] [INFO] Worker exiting (pid: 47834)
+[2022-07-03 13:44:46 -0400] [47831] [INFO] Shutting down: Master
+[2022-07-03 13:44:46 -0400] [47831] [INFO] Reason: Worker failed to boot.
+[2022-07-03 13:44:48 -0400] [47835] [INFO] Starting gunicorn 20.1.0
+[2022-07-03 13:44:48 -0400] [47835] [INFO] Listening at: http://127.0.0.1:8000 (47835)
+[2022-07-03 13:44:48 -0400] [47835] [INFO] Using worker: sync
+[2022-07-03 13:44:48 -0400] [47838] [INFO] Booting worker with pid: 47838
+[2022-07-03 13:44:48 -0400] [47838] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/home/john/venv/lib/python3.7/site-packages/gunicorn/arbiter.py", line 589, in spawn_worker
+    worker.init_process()
+  File "/home/john/venv/lib/python3.7/site-packages/gunicorn/workers/base.py", line 134, in init_process
+    self.load_wsgi()
+  File "/home/john/venv/lib/python3.7/site-packages/gunicorn/workers/base.py", line 146, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/home/john/venv/lib/python3.7/site-packages/gunicorn/app/base.py", line 67, in wsgi
+    self.callable = self.load()
+  File "/home/john/venv/lib/python3.7/site-packages/gunicorn/app/wsgiapp.py", line 58, in load
+    return self.load_wsgiapp()
+  File "/home/john/venv/lib/python3.7/site-packages/gunicorn/app/wsgiapp.py", line 48, in load_wsgiapp
+    return util.import_app(self.app_uri)
+  File "/home/john/venv/lib/python3.7/site-packages/gunicorn/util.py", line 359, in import_app
+    mod = importlib.import_module(module)
+  File "/usr/lib/python3.7/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1006, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 983, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 965, in _find_and_load_unlocked
+ModuleNotFoundError: No module named 'h3d.wsgi'
+[2022-07-03 13:44:48 -0400] [47838] [INFO] Worker exiting (pid: 47838)
+[2022-07-03 13:44:48 -0400] [47839] [INFO] Booting worker with pid: 47839
+[2022-07-03 13:44:48 -0400] [47839] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/home/john/venv/lib/python3.7/site-packages/gunicorn/arbiter.py", line 589, in spawn_worker
+    worker.init_process()
+  File "/home/john/venv/lib/python3.7/site-packages/gunicorn/workers/base.py", line 134, in init_process
+    self.load_wsgi()
+  File "/home/john/venv/lib/python3.7/site-packages/gunicorn/workers/base.py", line 146, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/home/john/venv/lib/python3.7/site-packages/gunicorn/app/base.py", line 67, in wsgi
+    self.callable = self.load()
+  File "/home/john/venv/lib/python3.7/site-packages/gunicorn/app/wsgiapp.py", line 58, in load
+    return self.load_wsgiapp()
+  File "/home/john/venv/lib/python3.7/site-packages/gunicorn/app/wsgiapp.py", line 48, in load_wsgiapp
+    return util.import_app(self.app_uri)
+  File "/home/john/venv/lib/python3.7/site-packages/gunicorn/util.py", line 359, in import_app
+    mod = importlib.import_module(module)
+  File "/usr/lib/python3.7/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1006, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 983, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 965, in _find_and_load_unlocked
+ModuleNotFoundError: No module named 'h3d.wsgi'
+[2022-07-03 13:44:48 -0400] [47839] [INFO] Worker exiting (pid: 47839)
+Traceback (most recent call last):
+  File "/home/john/venv/lib/python3.7/site-packages/gunicorn/arbiter.py", line 202, in run
+    self.manage_workers()
+  File "/home/john/venv/lib/python3.7/site-packages/gunicorn/arbiter.py", line 551, in manage_workers
+    self.spawn_workers()
+  File "/home/john/venv/lib/python3.7/site-packages/gunicorn/arbiter.py", line 623, in spawn_workers
+    time.sleep(0.1 * random.random())
+  File "/home/john/venv/lib/python3.7/site-packages/gunicorn/arbiter.py", line 242, in handle_chld
+    self.reap_workers()
+  File "/home/john/venv/lib/python3.7/site-packages/gunicorn/arbiter.py", line 525, in reap_workers
+    raise HaltServer(reason, self.WORKER_BOOT_ERROR)
+gunicorn.errors.HaltServer: <HaltServer 'Worker failed to boot.' 3>
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/john/venv/bin/gunicorn", line 8, in <module>
+    sys.exit(run())
+  File "/home/john/venv/lib/python3.7/site-packages/gunicorn/app/wsgiapp.py", line 67, in run
+    WSGIApplication("%(prog)s [OPTIONS] [APP_MODULE]").run()
+  File "/home/john/venv/lib/python3.7/site-packages/gunicorn/app/base.py", line 231, in run
+    super().run()
+  File "/home/john/venv/lib/python3.7/site-packages/gunicorn/app/base.py", line 72, in run
+    Arbiter(self).run()
+  File "/home/john/venv/lib/python3.7/site-packages/gunicorn/arbiter.py", line 229, in run
+    self.halt(reason=inst.reason, exit_status=inst.exit_status)
+  File "/home/john/venv/lib/python3.7/site-packages/gunicorn/arbiter.py", line 342, in halt
+    self.stop()
+  File "/home/john/venv/lib/python3.7/site-packages/gunicorn/arbiter.py", line 393, in stop
+    time.sleep(0.1)
+  File "/home/john/venv/lib/python3.7/site-packages/gunicorn/arbiter.py", line 242, in handle_chld
+    self.reap_workers()
+  File "/home/john/venv/lib/python3.7/site-packages/gunicorn/arbiter.py", line 525, in reap_workers
+    raise HaltServer(reason, self.WORKER_BOOT_ERROR)
+gunicorn.errors.HaltServer: <HaltServer 'Worker failed to boot.' 3>
+[2022-07-03 13:44:51 -0400] [47840] [INFO] Starting gunicorn 20.1.0
+[2022-07-03 13:44:51 -0400] [47840] [INFO] Listening at: http://127.0.0.1:8000 (47840)
+[2022-07-03 13:44:51 -0400] [47840] [INFO] Using worker: sync
+[2022-07-03 13:44:51 -0400] [47843] [INFO] Booting worker with pid: 47843
+[2022-07-03 13:44:51 -0400] [47843] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/home/john/venv/lib/python3.7/site-packages/gunicorn/arbiter.py", line 589, in spawn_worker
+    worker.init_process()
+  File "/home/john/venv/lib/python3.7/site-packages/gunicorn/workers/base.py", line 134, in init_process
+    self.load_wsgi()
+  File "/home/john/venv/lib/python3.7/site-packages/gunicorn/workers/base.py", line 146, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/home/john/venv/lib/python3.7/site-packages/gunicorn/app/base.py", line 67, in wsgi
+    self.callable = self.load()
+  File "/home/john/venv/lib/python3.7/site-packages/gunicorn/app/wsgiapp.py", line 58, in load
+    return self.load_wsgiapp()
+  File "/home/john/venv/lib/python3.7/site-packages/gunicorn/app/wsgiapp.py", line 48, in load_wsgiapp
+    return util.import_app(self.app_uri)
+  File "/home/john/venv/lib/python3.7/site-packages/gunicorn/util.py", line 359, in import_app
+    mod = importlib.import_module(module)
+  File "/usr/lib/python3.7/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1006, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 983, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 965, in _find_and_load_unlocked
+ModuleNotFoundError: No module named 'h3d.wsgi'
+[2022-07-03 13:44:51 -0400] [47843] [INFO] Worker exiting (pid: 47843)
+[2022-07-03 13:44:51 -0400] [47840] [INFO] Shutting down: Master
+[2022-07-03 13:44:51 -0400] [47840] [INFO] Reason: Worker failed to boot.
+[2022-07-03 14:32:48 -0400] [48160] [INFO] Starting gunicorn 20.1.0
+[2022-07-03 14:32:48 -0400] [48160] [INFO] Listening at: http://127.0.0.1:8000 (48160)
+[2022-07-03 14:32:48 -0400] [48160] [INFO] Using worker: sync
+[2022-07-03 14:32:48 -0400] [48163] [INFO] Booting worker with pid: 48163
+[2022-07-03 14:32:48 -0400] [48163] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/home/john/venv/lib/python3.7/site-packages/gunicorn/arbiter.py", line 589, in spawn_worker
+    worker.init_process()
+  File "/home/john/venv/lib/python3.7/site-packages/gunicorn/workers/base.py", line 134, in init_process
+    self.load_wsgi()
+  File "/home/john/venv/lib/python3.7/site-packages/gunicorn/workers/base.py", line 146, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/home/john/venv/lib/python3.7/site-packages/gunicorn/app/base.py", line 67, in wsgi
+    self.callable = self.load()
+  File "/home/john/venv/lib/python3.7/site-packages/gunicorn/app/wsgiapp.py", line 58, in load
+    return self.load_wsgiapp()
+  File "/home/john/venv/lib/python3.7/site-packages/gunicorn/app/wsgiapp.py", line 48, in load_wsgiapp
+    return util.import_app(self.app_uri)
+  File "/home/john/venv/lib/python3.7/site-packages/gunicorn/util.py", line 359, in import_app
+    mod = importlib.import_module(module)
+  File "/usr/lib/python3.7/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1006, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 983, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 965, in _find_and_load_unlocked
+ModuleNotFoundError: No module named 'h3d.wsgi'
+[2022-07-03 14:32:48 -0400] [48163] [INFO] Worker exiting (pid: 48163)
+[2022-07-03 14:32:48 -0400] [48164] [INFO] Booting worker with pid: 48164
+[2022-07-03 14:32:48 -0400] [48164] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/home/john/venv/lib/python3.7/site-packages/gunicorn/arbiter.py", line 589, in spawn_worker
+    worker.init_process()
+  File "/home/john/venv/lib/python3.7/site-packages/gunicorn/workers/base.py", line 134, in init_process
+    self.load_wsgi()
+  File "/home/john/venv/lib/python3.7/site-packages/gunicorn/workers/base.py", line 146, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/home/john/venv/lib/python3.7/site-packages/gunicorn/app/base.py", line 67, in wsgi
+    self.callable = self.load()
+  File "/home/john/venv/lib/python3.7/site-packages/gunicorn/app/wsgiapp.py", line 58, in load
+    return self.load_wsgiapp()
+  File "/home/john/venv/lib/python3.7/site-packages/gunicorn/app/wsgiapp.py", line 48, in load_wsgiapp
+    return util.import_app(self.app_uri)
+  File "/home/john/venv/lib/python3.7/site-packages/gunicorn/util.py", line 359, in import_app
+    mod = importlib.import_module(module)
+  File "/usr/lib/python3.7/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1006, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 983, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 965, in _find_and_load_unlocked
+ModuleNotFoundError: No module named 'h3d.wsgi'
+[2022-07-03 14:32:48 -0400] [48164] [INFO] Worker exiting (pid: 48164)
+Traceback (most recent call last):
+  File "/home/john/venv/lib/python3.7/site-packages/gunicorn/arbiter.py", line 202, in run
+    self.manage_workers()
+  File "/home/john/venv/lib/python3.7/site-packages/gunicorn/arbiter.py", line 551, in manage_workers
+    self.spawn_workers()
+  File "/home/john/venv/lib/python3.7/site-packages/gunicorn/arbiter.py", line 623, in spawn_workers
+    time.sleep(0.1 * random.random())
+  File "/home/john/venv/lib/python3.7/site-packages/gunicorn/arbiter.py", line 242, in handle_chld
+    self.reap_workers()
+  File "/home/john/venv/lib/python3.7/site-packages/gunicorn/arbiter.py", line 525, in reap_workers
+    raise HaltServer(reason, self.WORKER_BOOT_ERROR)
+gunicorn.errors.HaltServer: <HaltServer 'Worker failed to boot.' 3>
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/john/venv/bin/gunicorn", line 8, in <module>
+    sys.exit(run())
+  File "/home/john/venv/lib/python3.7/site-packages/gunicorn/app/wsgiapp.py", line 67, in run
+    WSGIApplication("%(prog)s [OPTIONS] [APP_MODULE]").run()
+  File "/home/john/venv/lib/python3.7/site-packages/gunicorn/app/base.py", line 231, in run
+    super().run()
+  File "/home/john/venv/lib/python3.7/site-packages/gunicorn/app/base.py", line 72, in run
+    Arbiter(self).run()
+  File "/home/john/venv/lib/python3.7/site-packages/gunicorn/arbiter.py", line 229, in run
+    self.halt(reason=inst.reason, exit_status=inst.exit_status)
+  File "/home/john/venv/lib/python3.7/site-packages/gunicorn/arbiter.py", line 342, in halt
+    self.stop()
+  File "/home/john/venv/lib/python3.7/site-packages/gunicorn/arbiter.py", line 393, in stop
+    time.sleep(0.1)
+  File "/home/john/venv/lib/python3.7/site-packages/gunicorn/arbiter.py", line 242, in handle_chld
+    self.reap_workers()
+  File "/home/john/venv/lib/python3.7/site-packages/gunicorn/arbiter.py", line 525, in reap_workers
+    raise HaltServer(reason, self.WORKER_BOOT_ERROR)
+gunicorn.errors.HaltServer: <HaltServer 'Worker failed to boot.' 3>
+[2022-07-03 14:32:49 -0400] [48165] [INFO] Starting gunicorn 20.1.0
+[2022-07-03 14:32:49 -0400] [48165] [INFO] Listening at: http://127.0.0.1:8000 (48165)
+[2022-07-03 14:32:49 -0400] [48165] [INFO] Using worker: sync
+[2022-07-03 14:32:49 -0400] [48168] [INFO] Booting worker with pid: 48168
+[2022-07-03 14:32:49 -0400] [48168] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/home/john/venv/lib/python3.7/site-packages/gunicorn/arbiter.py", line 589, in spawn_worker
+    worker.init_process()
+  File "/home/john/venv/lib/python3.7/site-packages/gunicorn/workers/base.py", line 134, in init_process
+    self.load_wsgi()
+  File "/home/john/venv/lib/python3.7/site-packages/gunicorn/workers/base.py", line 146, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/home/john/venv/lib/python3.7/site-packages/gunicorn/app/base.py", line 67, in wsgi
+    self.callable = self.load()
+  File "/home/john/venv/lib/python3.7/site-packages/gunicorn/app/wsgiapp.py", line 58, in load
+    return self.load_wsgiapp()
+  File "/home/john/venv/lib/python3.7/site-packages/gunicorn/app/wsgiapp.py", line 48, in load_wsgiapp
+    return util.import_app(self.app_uri)
+  File "/home/john/venv/lib/python3.7/site-packages/gunicorn/util.py", line 359, in import_app
+    mod = importlib.import_module(module)
+  File "/usr/lib/python3.7/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1006, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 983, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 965, in _find_and_load_unlocked
+ModuleNotFoundError: No module named 'h3d.wsgi'
+[2022-07-03 14:32:49 -0400] [48168] [INFO] Worker exiting (pid: 48168)
+[2022-07-03 14:32:49 -0400] [48165] [INFO] Shutting down: Master
+[2022-07-03 14:32:49 -0400] [48165] [INFO] Reason: Worker failed to boot.
+[2022-07-03 14:32:51 -0400] [48169] [INFO] Starting gunicorn 20.1.0
+[2022-07-03 14:32:51 -0400] [48169] [INFO] Listening at: http://127.0.0.1:8000 (48169)
+[2022-07-03 14:32:51 -0400] [48169] [INFO] Using worker: sync
+[2022-07-03 14:32:51 -0400] [48172] [INFO] Booting worker with pid: 48172
+[2022-07-03 14:32:51 -0400] [48172] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/home/john/venv/lib/python3.7/site-packages/gunicorn/arbiter.py", line 589, in spawn_worker
+    worker.init_process()
+  File "/home/john/venv/lib/python3.7/site-packages/gunicorn/workers/base.py", line 134, in init_process
+    self.load_wsgi()
+  File "/home/john/venv/lib/python3.7/site-packages/gunicorn/workers/base.py", line 146, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/home/john/venv/lib/python3.7/site-packages/gunicorn/app/base.py", line 67, in wsgi
+    self.callable = self.load()
+  File "/home/john/venv/lib/python3.7/site-packages/gunicorn/app/wsgiapp.py", line 58, in load
+    return self.load_wsgiapp()
+  File "/home/john/venv/lib/python3.7/site-packages/gunicorn/app/wsgiapp.py", line 48, in load_wsgiapp
+    return util.import_app(self.app_uri)
+  File "/home/john/venv/lib/python3.7/site-packages/gunicorn/util.py", line 359, in import_app
+    mod = importlib.import_module(module)
+  File "/usr/lib/python3.7/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1006, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 983, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 965, in _find_and_load_unlocked
+ModuleNotFoundError: No module named 'h3d.wsgi'
+[2022-07-03 14:32:51 -0400] [48172] [INFO] Worker exiting (pid: 48172)
+[2022-07-03 14:32:51 -0400] [48169] [INFO] Shutting down: Master
+[2022-07-03 14:32:51 -0400] [48169] [INFO] Reason: Worker failed to boot.
+[2022-07-03 14:32:55 -0400] [48173] [INFO] Starting gunicorn 20.1.0
+[2022-07-03 14:32:55 -0400] [48173] [INFO] Listening at: http://127.0.0.1:8000 (48173)
+[2022-07-03 14:32:55 -0400] [48173] [INFO] Using worker: sync
+[2022-07-03 14:32:55 -0400] [48176] [INFO] Booting worker with pid: 48176
+[2022-07-03 14:32:55 -0400] [48176] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/home/john/venv/lib/python3.7/site-packages/gunicorn/arbiter.py", line 589, in spawn_worker
+    worker.init_process()
+  File "/home/john/venv/lib/python3.7/site-packages/gunicorn/workers/base.py", line 134, in init_process
+    self.load_wsgi()
+  File "/home/john/venv/lib/python3.7/site-packages/gunicorn/workers/base.py", line 146, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/home/john/venv/lib/python3.7/site-packages/gunicorn/app/base.py", line 67, in wsgi
+    self.callable = self.load()
+  File "/home/john/venv/lib/python3.7/site-packages/gunicorn/app/wsgiapp.py", line 58, in load
+    return self.load_wsgiapp()
+  File "/home/john/venv/lib/python3.7/site-packages/gunicorn/app/wsgiapp.py", line 48, in load_wsgiapp
+    return util.import_app(self.app_uri)
+  File "/home/john/venv/lib/python3.7/site-packages/gunicorn/util.py", line 359, in import_app
+    mod = importlib.import_module(module)
+  File "/usr/lib/python3.7/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1006, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 983, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 965, in _find_and_load_unlocked
+ModuleNotFoundError: No module named 'h3d.wsgi'
+[2022-07-03 14:32:55 -0400] [48177] [INFO] Booting worker with pid: 48177
+[2022-07-03 14:32:55 -0400] [48176] [INFO] Worker exiting (pid: 48176)
+[2022-07-03 14:32:55 -0400] [48177] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/home/john/venv/lib/python3.7/site-packages/gunicorn/arbiter.py", line 589, in spawn_worker
+    worker.init_process()
+  File "/home/john/venv/lib/python3.7/site-packages/gunicorn/workers/base.py", line 134, in init_process
+    self.load_wsgi()
+  File "/home/john/venv/lib/python3.7/site-packages/gunicorn/workers/base.py", line 146, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/home/john/venv/lib/python3.7/site-packages/gunicorn/app/base.py", line 67, in wsgi
+    self.callable = self.load()
+  File "/home/john/venv/lib/python3.7/site-packages/gunicorn/app/wsgiapp.py", line 58, in load
+    return self.load_wsgiapp()
+  File "/home/john/venv/lib/python3.7/site-packages/gunicorn/app/wsgiapp.py", line 48, in load_wsgiapp
+    return util.import_app(self.app_uri)
+  File "/home/john/venv/lib/python3.7/site-packages/gunicorn/util.py", line 359, in import_app
+    mod = importlib.import_module(module)
+  File "/usr/lib/python3.7/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1006, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 983, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 965, in _find_and_load_unlocked
+ModuleNotFoundError: No module named 'h3d.wsgi'
+[2022-07-03 14:32:55 -0400] [48177] [INFO] Worker exiting (pid: 48177)
+[2022-07-03 14:32:55 -0400] [48178] [INFO] Booting worker with pid: 48178
+[2022-07-03 14:32:55 -0400] [48178] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/home/john/venv/lib/python3.7/site-packages/gunicorn/arbiter.py", line 589, in spawn_worker
+    worker.init_process()
+  File "/home/john/venv/lib/python3.7/site-packages/gunicorn/workers/base.py", line 134, in init_process
+    self.load_wsgi()
+  File "/home/john/venv/lib/python3.7/site-packages/gunicorn/workers/base.py", line 146, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/home/john/venv/lib/python3.7/site-packages/gunicorn/app/base.py", line 67, in wsgi
+    self.callable = self.load()
+  File "/home/john/venv/lib/python3.7/site-packages/gunicorn/app/wsgiapp.py", line 58, in load
+    return self.load_wsgiapp()
+  File "/home/john/venv/lib/python3.7/site-packages/gunicorn/app/wsgiapp.py", line 48, in load_wsgiapp
+    return util.import_app(self.app_uri)
+  File "/home/john/venv/lib/python3.7/site-packages/gunicorn/util.py", line 359, in import_app
+    mod = importlib.import_module(module)
+  File "/usr/lib/python3.7/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1006, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 983, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 965, in _find_and_load_unlocked
+ModuleNotFoundError: No module named 'h3d.wsgi'
+[2022-07-03 14:32:55 -0400] [48178] [INFO] Worker exiting (pid: 48178)
+[2022-07-03 14:32:55 -0400] [48173] [WARNING] Worker with pid 48176 was terminated due to signal 15
+[2022-07-03 14:32:55 -0400] [48173] [WARNING] Worker with pid 48178 was terminated due to signal 15
+[2022-07-03 14:32:55 -0400] [48173] [INFO] Shutting down: Master
+[2022-07-03 14:32:55 -0400] [48173] [INFO] Reason: Worker failed to boot.
