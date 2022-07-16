@@ -2672,6 +2672,9 @@ h3,h4,h6,li {
 .header__logo,a.button,button {
     display: inline-block
 }
+.header-logo img {
+    margin-top: 20px;
+}
 
 a {
     text-decoration: none;
