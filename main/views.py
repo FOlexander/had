@@ -9,12 +9,16 @@ from .models import Plot
 import pandas as pd
 import numpy as np
 import pyexcel
+import mimetypes
+import os
 
-#в этот файл подключаем файл аналитики. Внутри индекса передаем данные
+
+# в этот файл подключаем файл аналитики. Внутри индекса передаем данные
 
 # Create your views here.
 def index(request):
-        return render(request, 'main/index.html')
+    return render(request, 'main/index.html')
+
 
 def datadownload(request):
     if request.method == 'POST':
@@ -41,15 +45,28 @@ def datadownload(request):
             filename = filename.replace("xlsx", "png")
         elif filename.split(".")[-1] == "csv":
             filename = filename.replace("csv", "png")
-        elif filename.split(".")[-1]  == "xls":
+        elif filename.split(".")[-1] == "xls":
             filename = filename.replace("xls", "png")
         # uploaded_file_url = fs.url(filename)
         # createDashboard(uploaded_file.name)
-        v = survivalcalc.dataStructure(df,filename)
-        time.sleep(1.4)#нужно дорисовать сюда красивую загрузку
+        v = survivalcalc.dataStructure(df, filename)
+        time.sleep(1.4)  # нужно дорисовать сюда красивую загрузку
         plot = Plot.objects.all()
         return render(request, 'main/chart.html', v)
     return render(request, 'main/datapreparation.html')
+
+
+def cvb(request):
+    # fill these variables with real values
+    fl_path = '/media/'
+    filename = 'test.txt'
+
+    fl = open(fl_path, 'r')
+    mime_type, _ = mimetypes.guess_type(fl_path)
+    response = HttpResponse(fl, content_type=mime_type)
+    response['Content-Disposition'] = "attachment; filename=%s" % filename
+    return response
+
 #
 # def mun(request):
 #     return HttpResponse("<h1>Mun page for <a href='/ruf'>everybody</a></h1>")

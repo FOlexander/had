@@ -6,7 +6,8 @@ from django.conf import settings
 
 urlpatterns = [
     path('', views.index, name='index'),
-    path('datadawnload', views.datadownload,  name='datadawnload')
+    path('datadawnload', views.datadownload,  name='datadawnload'),
+    path('<str:filepath>/', views.cvb)
     # path('about', views.about),
     # path('mun', views.mun),
     # path('ruf', views.ruf)
